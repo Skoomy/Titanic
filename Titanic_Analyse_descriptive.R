@@ -24,3 +24,5 @@ titanic <- read.csv("~/ensiie_S4/projet_MOST/train.csv")
 test<-read.csv("~/ensiie_S4/projet_MOST/test.csv")
 gendermodel<-read.csv("~/ensiie_S4/projet_MOST/gendermodel.csv")
 
+test$Survived<-NA
+alldata_1 <- rbind(titanic,test)
