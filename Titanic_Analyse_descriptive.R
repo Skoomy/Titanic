@@ -1,4 +1,4 @@
-##Titanic Kaggle
+##Titanic Kaggle Analyse descriptive
 
 library(ggplot2) #Beautifull plot
 library(randomForest) 
@@ -24,12 +24,15 @@ titanic <- read.csv("~/ensiie_S4/projet_MOST/train.csv")
 test<-read.csv("~/ensiie_S4/projet_MOST/test.csv")
 gendermodel<-read.csv("~/ensiie_S4/projet_MOST/gendermodel.csv")
 
+names(titanic) #knowing the column name
+str(titanic) #Know the type of your variables 
 md.pattern(titanic) ## 177 missing values in Age
+
 dim(titanic)
 
 #Categorial variable
 
-str(titanic) #Know the type of your variables 
+
 
 #Transfoorm in factor
 titanic$Pclass<-as.factor(titanic$Pclass)
@@ -116,3 +119,14 @@ plotPclass=ggplot(titanic, aes(x=Pclass, y=Survived,fill=Pclass))+ geom_bar(stat
 piePclass
 plotPclass
 grid.arrange(piePclass,plotPclass, nrow=2, ncol=1)
+
+
+### Fare 
+FareDensity=ggplot(titanic, aes(titanic$Fare)) +
+  geom_density(alpha=0.2)+labs(title= "Fare Density",x="Fare")
+
+##Age density #177 missing_values
+ggplot(titanic, aes(titanic$Age)) +
+  geom_density(alpha=0.2)+labs(title= "Fare Density",x="Fare")
+  
+
