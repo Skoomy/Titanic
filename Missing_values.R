@@ -342,3 +342,6 @@ plot(ecdf(solution_1$svmrad[solution_1$Survivded==1]),
 legend("bottomright",c("score=0","score=1"),pch=c(16,17),col=c("blue","red"),lwd=1)
 solution<-data.frame(PassengerId=test_1$PassengerId,Survived=solution_1$svmrad)
 write.csv(solution,file="~/ensiie_S4/svmrad_titanic1_model.csv",row.names=F)
+
+
+####SVM sur Axes Factorielle 
